@@ -6,7 +6,7 @@
    <Card v-bind:card="card" v-bind:class="card"/>
     <CardForm v-bind:card="card" @option="changeVendor"/>
       
-     <button v-on:click="()=>$router.push('/')">Add Card</button>
+    
     
   </div>
 </template>
@@ -32,10 +32,27 @@ export default {
       month: "",
       year: "",
       vendor: "bitcoin",
-      color:"#ccc"
+      bgcolor:"red"
 
     }
-  })
+  }),
+   methods: {
+    changeVendor(vendor) {
+      if (vendor === "ninja-bank") {
+        this.card.vendor = require('../assets/vendor-' + vendor );
+      }
+      if (vendor === "evil-corp") {
+         this.card.vendor = require('../assets/vendor-' + vendor );
+      }
+      if (vendor === "blockchain-inc") {
+        this.card.vendor = require('../assets/vendor-' + vendor );
+      }
+      if (vendor === "bitcoin-inc") {
+        this.card.vendor = require('../assets/vendor-' + vendor );
+      }
+    }
+  }
+
  
   }
 
@@ -56,25 +73,5 @@ body{
 h4{
   color:rgb(161, 152, 152)
 }
-button {
-    width: 40%;
-    padding: 20px;
-    margin-top:25px;
-    margin-right: 50px;
-    border: 3px solid black;
-    text-align: center;
-    border-radius: 10px;
-    color:black;
-    transition: 0.7s;
-    text-decoration: none;
-    font-size: 20px;
-    
-    &:hover {
-      color:white;
-      background: #000;
-      transition: 0.7s;
-    
-    
-    }
-  }
+
 </style>

@@ -47,6 +47,7 @@
       <option value="evil">Evil Corp</option>
          <option value="ninja">Ninja Bank</option>
     </select>
+     <button >Add New Card</button>
   </form>
 </template>
   
@@ -60,8 +61,8 @@ props:{
 },
 methods:{
   addNewCard(){
-    this.$root.$emit("add-card", this.card)
-
+    this.$root.$emit("addcard", this.card)
+    this.$router.go(-1)
   }
 
 }
@@ -69,6 +70,10 @@ methods:{
 }
 </script>
 <style lang="scss">
+body{
+  width:100%;
+  
+}
 form {
   width: 35%;
   margin-left: 290px;
@@ -96,4 +101,26 @@ form {
     outline: none;
   }
 }
+button {
+    width: 100%;
+    padding: 20px;
+    margin-top:25px;
+    margin-right: 50px;
+    border: 3px solid black;
+    text-align: center;
+    border-radius: 10px;
+    color:black;
+    transition: 0.7s;
+    text-decoration: none;
+    font-size: 20px;
+    
+    &:hover {
+      color:white;
+      background: #000;
+      transition: 0.7s;
+    
+    
+    }
+  }
+
 </style>

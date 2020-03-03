@@ -1,9 +1,9 @@
 <template>
-  <div class="card">
-  <div class="light">
+  <div class="card" v-bind:style="{background:card.bgcolor}">
+  <div class="light" >
       <img src="../assets/chip-light.svg" alt="chip" class="chip" />
       <img v-bind:src="require('../assets/vendor-' + card.vendor + '.svg')"
-       v-bind:class="vendor" alt="dark">
+       v-bind:class="vendorclass" alt="dark">
   </div>
   <div class="number">{{card.cardNumber}}</div>
         <div class="info"> 

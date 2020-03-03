@@ -15,7 +15,8 @@ new Vue({
         month:"2",
         year:"25",
         cvv:'100',
-        vendor:'bitcoin'
+        vendor:'bitcoin',
+        bgcolor:"yellow"
       },
       {
         id:'2',
@@ -24,7 +25,8 @@ new Vue({
         month:"4",
         year:"25",
         cvv:'200',
-        vendor:'ninja'
+        vendor:'ninja',
+        bgcolor:"purple"
       },
       {
         id:'3',
@@ -33,7 +35,8 @@ new Vue({
         month:"7",
         year:"25",
         cvv:'300',
-        vendor:'evil'
+        vendor:'evil',
+        bgcolor:"grey"
 
       },
       {
@@ -43,14 +46,15 @@ new Vue({
         month:"9",
         year:"25",
         cvv:'400',
-        vendor:'blockchain'
+        vendor:'blockchain',
+        bgcolor:"brown"
       }
     ]
   }},
-  mounted() {
-    this.$root.$on("about", data => {
+  mounted(){
+    this.$root.$on("addcard", data =>{
       this.cards.push(data);
-    });
+    })
   },
 
   render: h => h(App)
