@@ -1,5 +1,5 @@
 <template>
-  <div class="card" v-bind:style="{background:card.bgcolor}">
+  <div class="card"  v-bind:style="{background:card.bgcolor}">
   <div class="light" >
       <img src="../assets/chip-light.svg" alt="chip" class="chip" />
       <img v-bind:src="require('../assets/vendor-' + card.vendor + '.svg')"
@@ -15,6 +15,7 @@
           <p>{{card.month}}/{{card.year}}</p>
           </aside>
         </div>
+      
             
   </div>
 </template>

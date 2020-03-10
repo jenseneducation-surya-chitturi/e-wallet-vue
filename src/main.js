@@ -52,8 +52,8 @@ new Vue({
     ]
   }},
   mounted(){
-    this.$root.$on("addcard", data =>{
-      this.cards.push(data);
+    this.$root.$on("addcard", card =>{
+      this.cards.push(card); 
     })
   },
 

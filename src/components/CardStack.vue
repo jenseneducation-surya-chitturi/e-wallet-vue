@@ -1,8 +1,8 @@
 <template>
     <div class="card-stack">
-        <card v-for="card in cards" :key="card.id"
+     <card v-for="card in cards" :key="card.id"
         v-bind:card="card" 
-     @changeCard="$emit('changeCard', card)"/>
+        v-on:click.native="changeCard(card)"/>
     </div>
 </template>
 
@@ -15,7 +15,13 @@ export default {
     cards() {
       return this.$root.$data.cards;
     }
-  }
+  },
+ methods:{
+     changeCard(card){
+     this.$emit("changeCard", card)
+     }
+    }
+  
 }
 </script>
 <style lang="scss">
